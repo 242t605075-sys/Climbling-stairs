@@ -1,0 +1,35 @@
+class Solution {
+
+    public int climbStairs(int n) {
+        if (n == 1) {
+            return 1;
+        }
+
+        if (n == 2) {
+            return 2;
+        }
+
+        int a = 1;
+        int b = 2;
+
+        for (int i = 3; i <= n; i++) {
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+
+        return b;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        int n = 5;
+
+        int result = solution.climbStairs(n);
+
+        System.out.println("Number of steps: " + n);
+        System.out.println("Number of ways to climb: " + result);
+    }
+}
+output:8
